@@ -1,0 +1,19 @@
+version: "3.7"
+
+services:
+  form_arquetipos:
+    container_name: db
+    image: postgres
+    restart: always
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=dev-db
+      - POSTGRES_DB=form
+    ports:
+      - 15436:5432
+    volumes:
+      - pgdata:/data/postgres
+
+volumes:
+  pgdata:
+    driver: local
